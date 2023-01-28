@@ -39,17 +39,22 @@ button{
     flex-direction:column;
     align-items:center;
     color:var(--fontColor);
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 .container>*{
     margin: 10px;
 }
 .title{
     color: black;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     width: 100%;
     text-align: start;
     display: inline-flex;
+    align-items: center;
+    margin-bottom: -10px;
+}
+.title img{
+    width: 80px;
 }
 .title p::first-letter{
     font-weight: 700;
