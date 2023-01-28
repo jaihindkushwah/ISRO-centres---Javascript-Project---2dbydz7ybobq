@@ -20,6 +20,7 @@ function activateBtn(el) {
   } else {
     el.target.classList.remove("activate");
     active = "";
+    input.value="";
     result.innerHTML="";
     result.innerHTML=defaultElement();
   }
