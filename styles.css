@@ -81,6 +81,7 @@ button{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     background-color: var(--bcc);
     padding: 10px 20px;
@@ -108,6 +109,7 @@ button{
     /* padding:3px; */
 }
 .searchBox{
+    min-height: 35px;
     width: 49%;
     display: inline-flex;
     align-items: center;
@@ -130,9 +132,68 @@ button{
     background-color: rgb(54, 169, 252);
 }
 
+/* for 840px */
+@media screen and (max-width:840px) {
+    
+    .container{
+        max-width: 100%;
+    }
 
+}
 
+/* for 580px */
+@media screen and (max-width:580px) {
+    .container{
+        max-width: 100%;
+    }
+    .functionality{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .filterBtns{
+        margin-top: 15px;
+    }
+    .title{
+        /* font-size: 1.3rem; */
+        text-align: start;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 0px;
+    }
+    .title img{
+        align-self: flex-start;
+    }
 
+}
+/* for 420px */
+@media screen and (max-width:480px) {
+    .title{
+        font-size: 1.3rem;
+    }
+    h4{
+        font-size: .8rem;
+    }
+    .desc{
+        font-size: 1rem;
+    }
+    .searchItems p{
+        font-size: .7rem;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    .cityBtn,.stateBtn,.centerBtn{
+        font-weight: 700;
+        font-size: .8rem;
+        padding: 5px 15px;
+        
+    }
+}
 
 
 

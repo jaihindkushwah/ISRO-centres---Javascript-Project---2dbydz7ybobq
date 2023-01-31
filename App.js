@@ -35,24 +35,23 @@ searchBtn.addEventListener("click", () => {
     return;
   }
     fetch("https://isro.vercel.app/api/centres")
-    .then((x) => {
-        if(x.ok){
-            return x.json();
+    .then((response) => {
+        if(response.ok){
+            return response.json();
         }
-        throw new Error(`${x.status}`);
-        
+        throw new Error(`${response.status}`);
       })
-      .then((y) => {
-        let f = true;
+      .then((response) => {
+        let IsMatching = false;
         result.innerHTML = "";
-        y.centres.forEach((el) => {
+        response.centres.forEach((el) => {
           if (el[`${active}`].toLowerCase() == `${input.value}`.toLowerCase()) {
             // console.log(el);
             result.innerHTML += createEl(el);
-            f = false;
+            IsMatching = true;
           }
         });
-        if (f) {
+        if (!IsMatching) {
           input.value = "";
           result.innerHTML = "<div style='color:red'>Match not found!</div>";
         }
@@ -72,7 +71,7 @@ function createEl(el) {
 </div>`;
   return ele;
 }
-const def=[
+const defaultItems=[
     {
         name:"Western RRSC",
         Place:"Jodhpur",
@@ -81,7 +80,7 @@ const def=[
     {
         name:"Space Applications Centre",
         Place:"Ahmedabad",
-        State:""
+        State:"Gujrat"
     },
     {
         name:"Vikram Sarabhai Space centre",
@@ -94,10 +93,17 @@ window.onload=()=>{
 }
 function defaultElement(){
     let el="";
-    for(let i=0;i<def.length;i++){
-        el+=createEl(def[i]);
+    for(let i=0;i<defaultItems.length;i++){
+        el+=createEl(defaultItems[i]);
     }
     return el;
 }
+
+
+
+
+
+
+
 
 
