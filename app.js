@@ -46,7 +46,7 @@ searchBtn.addEventListener("click", () => {
         result.innerHTML = "";
         response.centres.forEach((el) => {
           //.toLowerCase() == `${input.value}`.toLowerCase()
-          if (el[`${active}`].includes(input.value)){
+          if (el[`${active}`].toLowerCase().includes(input.value.toLowerCase())){
             // console.log(el);
             result.innerHTML += createEl(el);
             IsMatching = true;
